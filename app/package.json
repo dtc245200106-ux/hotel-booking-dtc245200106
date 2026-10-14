@@ -1,0 +1,13 @@
+{
+  "name": "hotel-booking-app",
+  "version": "2.0.0",
+  "description": "Hotel Booking System with full features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  }
+}

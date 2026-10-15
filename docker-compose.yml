@@ -40,6 +40,7 @@ services:
     depends_on:
       - app
     networks:
+      - frontend
       - backend
     restart: unless-stopped
 
@@ -82,6 +83,7 @@ services:
     depends_on:
       - prometheus
     networks:
+      - frontend
       - backend
     restart: unless-stopped
 
@@ -140,5 +142,8 @@ volumes:
   loki_data:
 
 networks:
+  frontend:
+    driver: bridge
   backend:
     driver: bridge
+    internal: true

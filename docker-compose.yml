@@ -108,10 +108,36 @@ services:
       - backend
     restart: unless-stopped
 
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: hotel_loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yaml:ro
+      - loki_data:/loki
+    networks:
+      - backend
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: hotel_promtail
+    volumes:
+      - ./promtail/promtail-config.yml:/etc/promtail/config.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - loki
+    networks:
+      - backend
+    restart: unless-stopped
+
 volumes:
   pgdata:
   prometheus_data:
   grafana_data:
+  loki_data:
 
 networks:
   backend:

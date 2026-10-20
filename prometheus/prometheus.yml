@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+<<<<<<< HEAD
+=======
+  evaluation_interval: 15s
+
+>>>>>>> 279528a2dd30a2df8df9bd0b24fdf5bb0e4ba5d2
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+<<<<<<< HEAD
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+=======
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+>>>>>>> 279528a2dd30a2df8df9bd0b24fdf5bb0e4ba5d2
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']

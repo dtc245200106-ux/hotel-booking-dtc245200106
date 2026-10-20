@@ -80,6 +80,7 @@ services:
       GF_SECURITY_ADMIN_PASSWORD: admin123
     volumes:
       - grafana_data:/var/lib/grafana
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
     depends_on:
       - prometheus
     networks:
@@ -146,7 +147,3 @@ networks:
     driver: bridge
   backend:
     driver: bridge
-<<<<<<< HEAD
-=======
-    internal: true
->>>>>>> 279528a2dd30a2df8df9bd0b24fdf5bb0e4ba5d2

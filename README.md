@@ -80,6 +80,8 @@ hotel-booking-dtc245200106/
 │ └── loki-config.yml # Cấu hình Loki
 ├── promtail/
 │ └── promtail-config.yml # Cấu hình Promtail
+├── grafana/
+│ └── datasource.yml # Cấu hình Data Source cho Grafana
 ├── docker-compose.yml # Định nghĩa các service
 ├── init.sql # Khởi tạo database và dữ liệu mẫu
 ├── .env # Biến môi trường (không push lên GitHub)
@@ -166,7 +168,7 @@ text
 Dữ liệu mẫu
 6 phòng: Phong 101, 102, 201, 202, 301, 302 (Standard, Deluxe, Suite).
 
-2 khách hàng: Nguyen Van A, Tran Thi B.
+3 khách hàng: Nguyen Van A, Tran Thi B, Le Van C.
 
 🔐 Các biện pháp bảo mật (Hardening)
 Non-root container: Ứng dụng NodeJS chạy với user appuser thay vì root.
